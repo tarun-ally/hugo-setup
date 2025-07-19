@@ -1,0 +1,11 @@
+{{ $page := .context }}
+
+{{ if $page.Params.template }}
+  {{ partial (printf "templates/%s" $page.Params.template) (dict "context" $page "contentPath" $page.File.Path) }}
+{{ end }}
+
+{{ with $page.Params.blocks }}
+  {{ range . }}
+    {{ partial (printf "templates/%s" ._template) . }}
+  {{ end }}
+{{ end }}

@@ -1,0 +1,5 @@
+{{ define "main" }} 
+
+    <!-- Call Partial to Render Dynamic Page Content -->
+    {{ partial "templates/pagesContent.html" (dict "context" . "sectionName" "page") }} 
+{{ end }}

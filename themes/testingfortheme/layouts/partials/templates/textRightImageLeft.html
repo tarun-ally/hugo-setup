@@ -1,0 +1,71 @@
+<div class="textRightImageLeft-bg-img2" id="fd">
+  <div class="textRightImageLeft-home-banersection2">
+    <div class="textRightImageLeft-block">
+      <div class="textRightImageLeft-image-container">
+        {{ with .illustrations }} {{ if .illustration }}
+        <img
+          src="{{ .illustration }}"
+          alt="Illustration"
+          id="textRightImageLeft-home-hero-img2"
+        />
+        {{ else }}
+        <p>No illustration available.</p>
+        {{ end }} {{ end }}
+      </div>
+
+      <div class="textRightImageLeft-text-container">
+        {{ .body | markdownify }}
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  .textRightImageLeft-bg-img2 {
+    background-image: url("{{ .textRightImageLeftBackgroundImageLeft }}"),
+      url("{{ .textRightImageLeftBackgroundImageRight }}");
+    background-position: left, right;
+    background-repeat: no-repeat;
+    background-size: 30%, 30%;
+    width: 100vw;
+    position: relative;
+    margin: auto;
+    min-height: 60%;
+    background-color: transparent;
+  }
+
+  .textRightImageLeft-home-banersection2 {
+    width: 90%;
+    max-width: 1536px;
+    margin: auto;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .textRightImageLeft-block {
+    display: flex;
+    align-items: center;
+    border-radius: 8px;
+    gap: 5rem;
+  }
+
+  .textRightImageLeft-text-container {
+    flex: 1;
+    padding: 5px;
+  }
+
+  .textRightImageLeft-image-container img {
+    width: 30vw; /* Default width for desktop */
+    height: auto;
+  }
+
+  @media (max-width: 768px) {
+    .textRightImageLeft-block { /* MODIFIED: Applied to all instances of textRightImageLeft-block */
+      flex-direction: column; /* Stacks flex items vertically. Image is first in HTML, so it will be on top. */
+    }
+
+    .textRightImageLeft-image-container img {
+      width: 100%; /* Image takes full width in mobile */
+    }
+  }
+</style>

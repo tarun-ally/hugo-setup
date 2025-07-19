@@ -1,0 +1,108 @@
+<div class="textLeftImageRight-bg-img1">
+  <div id="textLeftImageRight-home-banersection2">
+    <div class="textLeftImageRight-block">
+      <div class="textLeftImageRight-image-container mobile-only">
+        {{ with .illustrations }} {{ if .illustration }}
+        <img
+          src="{{ .illustration }}"
+          alt="Illustration"
+          id="textLeftImageRight-home-hero-img2-mobile"
+        />
+        {{ else }}
+        <p>No illustration available.</p>
+        {{ end }} {{ end }}
+      </div>
+
+      <div class="textLeftImageRight-text-container">
+        {{ .body | markdownify }}
+      </div>
+
+      <div class="textLeftImageRight-image-container desktop-only">
+        {{ with .illustrations }} {{ if .illustration }}
+        <img
+          src="{{ .illustration }}"
+          alt="Illustration"
+          id="textLeftImageRight-home-hero-img2-desktop"
+        />
+        {{ else }}
+        <p>No illustration available.</p>
+        {{ end }} {{ end }}
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  .textLeftImageRight-bg-img1 {
+    background-image: url("{{ .textLeftImageRightBackgroundImageLeft }}"),
+      url("{{ .textLeftImageRightBackgroundImageRight }}");
+    background-position: left, right;
+    background-repeat: no-repeat;
+    background-size: 30%, 30%;
+    width: 100vw;
+    position: relative;
+    margin: auto;
+    min-height: 60%;
+    background-color: transparent;
+  }
+  #textLeftImageRight-home-banersection2 {
+    width: 90%;
+    max-width: 1536px;
+    margin: auto;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  .textLeftImageRight-block {
+    display: flex;
+    align-items: center;
+    border-radius: 8px;
+  }
+
+  .textLeftImageRight-text-container {
+    flex: 1;
+  }
+
+  .textLeftImageRight-image-container img {
+    width: 30vw;
+    height: auto;
+  }
+
+  @media (max-width: 768px) {
+    .textLeftImageRight-block {
+      flex-direction: column; /* Stack items vertically */
+    }
+
+    .textLeftImageRight-image-container {
+      width: 100%; /* Image takes full width on mobile */
+      margin-bottom: 20px; /* Add some space below the image */
+    }
+
+    .textLeftImageRight-image-container img {
+      width: 100%;
+      height: auto;
+    }
+
+    .mobile-only {
+      display: block !important;
+    }
+
+    .desktop-only {
+      display: none !important;
+    }
+  }
+
+  @media (min-width: 769px) {
+    .mobile-only {
+      display: none !important;
+    }
+
+    .desktop-only {
+      display: block !important;
+    }
+
+    /* Maintain left image on desktop */
+    .textLeftImageRight-block {
+      flex-direction: row;
+    }
+  }
+</style>

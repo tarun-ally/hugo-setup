@@ -1,0 +1,36 @@
+{
+  "name": "wizmo-website",
+  "version": "1.0.0",
+  "description": "## Getting started",
+  "main": "tailwind.config.js",
+  "scripts": {
+    "hugo": "npx hugo-bin",
+    "hugo:build": "npx hugo-bin --gc --minify",
+    "hugo:serve": "npm run build:all && npx hugo-bin server --watch",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build:scss": "sass ./themes/testingfortheme/assets/scss/style.scss:./static/css/style.css",
+    "build:css": "tailwindcss -i ./static/css/style.css -o ./static/css/output.css",
+    "build:all": "npm run build:scss && npm run build:css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://git.fplabs.tech/fplabs/testingfortheme/wizmo-website.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "autoprefixer": "^10.4.19",
+    "postcss": "^8.4.40",
+    "postcss-cli": "^11.0.0",
+    "postcss-import": "^16.1.0",
+    "@tailwindcss/postcss": "^4.1.7",
+    "tailwindcss": "^3.4.7"
+  },
+  "dependencies": {
+    "@tailwindcss/postcss": "^4.1.7",
+    "sass": "^1.87.0",
+    "sass-loader": "^16.0.5",
+    "webpack": "^5.99.8"
+  }
+}

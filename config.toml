@@ -1,0 +1,116 @@
+baseURL = ""
+relativeURLS = false
+languageCode = "en-us"
+title = "testingfortheme"
+theme = "testingfortheme"
+summaryLength = "10"
+pagerSize = 3
+pagination.pagerSize = 9
+enableRobotsTXT = true
+enableEmoji = true
+canonifyURLs = true
+disableHugoGeneratorInject = true
+
+
+
+
+# if md file names or locations might change:
+[permalinks]
+post = "/blog/:title/"
+
+sitename = "testingfortheme"
+
+
+
+# Plugins
+[params.plugins]
+
+  # CSS Plugins
+  [[params.plugins.css]]
+  URL = "/plugins/themefisher-font/style.css"
+  [[params.plugins.css]]
+  URL = "/plugins/owl-carousel/assets/owl.carousel.min.css"
+  [[params.plugins.css]]
+  URL = "/plugins/owl-carousel/assets/owl.theme.green.min.css"
+  [[params.plugins.css]]
+  URL = "/plugins/fancybox/jquery.fancybox.min.css"
+  [[params.plugins.css]]
+  URL = "/plugins/aos/aos.css"
+#  [[params.plugins.css]]
+ # URL = "https://fonts.googleapis.com/css?family=Droid+Serif:400i|Source+Sans+Pro:300,400,600,700"
+ # [[params.plugins.css]]
+ # URL = "https://fonts.googleapis.com/css?family=Manrope+Sans:300,400,600,700,800"
+  [[params.plugins.css]]
+  URL = "/plugins/owl-carousel/assets//owl.carousel.css"
+#  [[params.plugins.css]]
+#  URL = "https://cdn.snipcart.com/themes/v3.0.3/default/snipcart.css"
+
+
+
+
+    
+  
+ 
+  
+
+  
+ 
+  
+  
+
+[params]
+
+
+home = "Home"
+# Meta data
+description = "testingfortheme"
+author = ""
+# Google Analytics
+googleAnalytics = ""
+
+# Preloader
+  [params.preloader]
+  enable = true
+
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+  
+  
+[menus]
+  # Main Menu
+  [[menus.main]]
+    name = "Home"
+    identifier = "home"
+    pageRef = ""
+    weight = 1
+  
+    [[menus.main]]
+    name = "Products"
+    identifier = ""
+    url = "/#fd"
+    weight = 2  
+
+ 
+    
+    [[menus.main]]
+    name = "Blogs"
+    identifier = "blog"
+    pageRef = "/blog"
+    weight = 3
+   
+    [[menus.main]]
+        name = "Contact Us"
+        identifier = "contact"
+        url = "/#contact"
+        weight = 4
+        
+  
+
+[module]
+  [module.hugoVersion]
+    extended = false
+    min = "0.116.0"
+

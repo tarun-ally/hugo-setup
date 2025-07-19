@@ -1,0 +1,28 @@
+{{/* File: layouts/index.html */}}
+{{/* Replace the existing content of your layouts/index.html with this,
+     or integrate this logic carefully if you have other custom elements
+     in your index.html that you want to keep.
+*/}}
+
+{{ define "main" }} {{/* Or whatever main content block your baseof.html uses, e.g., "content" */}}
+
+  {{ $homepage_content_source := site.GetPage "page" }}
+
+  {{ if $homepage_content_source }}
+  {{ if or $homepage_content_source.Params.template $homepage_content_source.Params.blocks }}
+  <div class="dynamic-frontmatter-content">
+    {{ partial "templates/pagesContent.html" (dict "context" $homepage_content_source "sectionName" "homepage_from_page_section") }}
+  </div>
+{{ end }}
+   
+  {{ else }}
+    {{/* Fallback content if 'content/page/_index.md' is not found or accessible */}}
+    <div class="fallback-homepage-content">
+      <h1>Welcome to Our Website</h1>
+      <p>The main content for the homepage is currently being updated. Please check back soon!</p>
+      <p style="font-size:0.8em; color: #777;"><em>Site Admin Note: Ensure <code>content/page/_index.md</code> exists. <code>layouts/index.html</code> is configured to load its content from this file.</em></p>
+    </div>
+  {{ end }}
+
+{{ end }}
+

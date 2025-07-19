@@ -1,0 +1,32 @@
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<title>{{ if .IsHome }}{{ site.Title }}{{ else }}{{ printf "%s | %s" .Title site.Title }}{{ end }}</title>
+<meta name="description" content="Aplio theme">
+  <link
+    href="https://fonts.googleapis.com/css2?family=SUSE:wght@100..800&display=swap"
+    rel="stylesheet"
+/>
+{{hugo.Generator}}
+{{"<!-- Favicon -->" | safeHTML}}
+
+
+<link rel="shortcut icon" href="{{"images/favicons/favicon-32x32.png" | absURL}}" type="image/png" />
+
+{{"<!-- Fontawesome -->" | safeHTML}}
+<link rel="stylesheet" href="{{"plugins/fontawesome/all.css" | absURL}}"/>
+
+
+{{"<!-- AOS -->" | safeHTML}}
+<link rel="stylesheet" href="{{"plugins/fancybox/fancybox.css" | absURL}}"/>
+
+
+{{"<!-- Swiper -->" | safeHTML}}
+<link rel="stylesheet" href="{{"plugins/swiper/swiper.css" | absURL}}"/>
+
+{{"<!-- AOS -->" | safeHTML}}
+<link rel="stylesheet" href="{{"plugins/aos/aos.css" | absURL}}"/>
+
+
+ 
+{{ partialCached "head/css.html" . }}
